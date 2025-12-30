@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Salon Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✂️ Hair Salon Management System</h1>
+            <p>Manage your salon with style and efficiency</p>
+        </div>
+
+        <div class="stats" id="stats">
+            <div class="stat-card">
+                <h3 id="totalAppointments">0</h3>
+                <p>Total Appointments</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalCustomers">0</h3>
+                <p>Total Customers</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalServices">0</h3>
+                <p>Available Services</p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('appointments')">📅 Appointments</button>
+            <button class="tab-btn" onclick="openTab('customers')">👥 Customers</button>
+            <button class="tab-btn" onclick="openTab('services')">💇 Services</button>
+        </div>
+
+        <!-- Appointments Tab -->
+        <div id="appointments" class="tab-content active">
+            <h2 style="margin-bottom: 20px;">Book New Appointment</h2>
+            <form id="appointmentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Customer Name</label>
+                        <input type="text" id="appointmentCustomer" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="appointmentPhone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Service</label>
+                        <select id="appointmentService" required>
+                            <option value="">Select Service</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Stylist</label>
+                        <input type="text" id="appointmentStylist" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="appointmentDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" id="appointmentTime" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Book Appointment</button>
+            </form>
+
+            <div class="appointments-list" id="appointmentsList">
+                <h2 style="margin-top: 30px; margin-bottom: 20px;">Upcoming Appointments</h2>
+            </div>
+        </div>
+
+        <!-- Customers Tab -->
+        <div id="customers" class="tab-content">
+            <h2 style="margin-bottom: 20px;">Add New Customer</h2>
+            <form id="customerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="customerPhone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Stylist</label>
+                        <input type="text" id="customerStylist">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Notes</label>
+                    <textarea id="customerNotes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn">Add Customer</button>
+            </form>
+
+            <div class="customers-list" id="customersList">
+                <h2 style="margin-top: 30px; margin-bottom: 20px;">Customer List</h2>
+            </div>
+        </div>
+
+        <!-- Services Tab -->
+        <div id="services" class="tab-content">
+            <h2 style="margin-bottom: 20px;">Add New Service</h2>
+            <form id="serviceForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Service Name</label>
+                        <input type="text" id="serviceName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Price ($)</label>
+                        <input type="number" id="servicePrice" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Duration (minutes)</label>
+                        <input type="number" id="serviceDuration" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="serviceCategory" required>
+                            <option value="Hair Cut">Hair Cut</option>
+                            <option value="Hair Color">Hair Color</option>
+                            <option value="Hair Treatment">Hair Treatment</option>
+                            <option value="Styling">Styling</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="serviceDescription" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn">Add Service</button>
+            </form>
+
+            <div class="services-list" id="servicesList">
+                <h2 style="margin-top: 30px; margin-bottom: 20px;">Available Services</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
